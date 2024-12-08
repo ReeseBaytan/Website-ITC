@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product 1</title>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header>
+    <a href="Index.html"><h1>Ayban Shop</h1></a>
+  </header>
+
+  <main>
+    <section id="product1" class="product">
+      <h2>Shop the Essentials</h2>
+      <div class="item">
+        <img src="pr3-1.jpg" class="card-img" alt="..." style="width: 250px; height: auto;">
+        <p>A classic canvas low-top: Converse Chuck Taylor All Star (low-top)</p>
+        <br>
+        <span class="price-tag">$120.99</span>
+      </div>
+      <div class="item">
+        <img src="pr3-2.jpg" class="card-img" alt="..." style="width: 200px; height: auto;">
+        <p>A streetwear staple: Nike Air Force 1 ’07 (low-top)</p>
+        <br>
+        <span class="price-tag">$118.99</span>
+      </div>
+      <div class="item">
+        <img src="pr3-3.jpg" class="card-img" alt="..." style="width: 200px; height: auto;">
+        <p>Superga 2750 Cotu Classic Sneakers</p>
+        <br>
+        <span class="price-tag">$110.99</span>
+      </div>
+    </section>
+  </main>
+
+  <form id="purchaseForm">
+    <label for="product">Select Product:</label>
+    <select id="product">
+      <option value="product1">A classic canvas low-top</option>
+      <option value="product2">streetwear staple: Nike Air Force </option>
+      <option value="product3">Superga 2750 Cotu Classic</option>
+    </select>
+    <br>
+    <label for="quantity">Enter Quantity:</label>
+    <input type="number" id="quantity" min="1" value="1">
+    <br>
+    <button type="button" onclick="calculateTotal()">Calculate Total</button>
+  </form>
+
+  <div id="total"></div>
+
+  <script>
+    function calculateTotal() {
+      var product = document.getElementById("product").value;
+      var quantity = parseInt(document.getElementById("quantity").value);
+      var price = 0;
+      switch (product) {
+        case "product1":
+          price = 120.99;
+          break;
+        case "product2":
+          price = 118.99;
+          break;
+        case "product3":
+          price = 110.99;
+          break;
+        default:
+          break;
+      }
+      var total = price * quantity;
+      document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
+    }
+  </script>
+
+  <footer>
+    <p>CONTACT US AT IvanStore@gmail.com</p>
+  </footer>
+</body>
+</html>
